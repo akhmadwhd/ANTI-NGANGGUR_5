@@ -143,7 +143,7 @@ public class Dashboard_Client extends javax.swing.JFrame {
         jLabel8.setIcon(new javax.swing.ImageIcon("C:\\Users\\akhma\\OneDrive\\Pictures\\Saved Pictures\\White.PNG")); // NOI18N
         getContentPane().add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 10, 270, 100));
 
-        jLabel1.setIcon(new javax.swing.ImageIcon("C:\\Users\\akhma\\OneDrive\\Pictures\\Saved Pictures\\Job_Client.png")); // NOI18N
+        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anti/nganggur/Job_Client.png"))); // NOI18N
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, -20, -1, -1));
 
         pack();
