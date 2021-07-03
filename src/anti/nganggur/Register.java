@@ -4,9 +4,6 @@
  * and open the template in the editor.
  */
 package anti.nganggur;
-import static com.sun.org.apache.xml.internal.security.algorithms.JCEMapper.register;
-import static com.sun.org.glassfish.external.probe.provider.StatsProviderManager.register;
-import static java.rmi.activation.Activatable.register;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -46,12 +43,12 @@ public class Register extends javax.swing.JFrame {
         Text_Status = new javax.swing.JTextField();
         Text_Lokasi = new javax.swing.JTextField();
         Text_Password = new javax.swing.JPasswordField();
-        jButton1 = new javax.swing.JButton();
+        Register_Button = new javax.swing.JButton();
         Freelancer = new javax.swing.JRadioButton();
         Client = new javax.swing.JRadioButton();
         MALE = new javax.swing.JRadioButton();
         FEMALE = new javax.swing.JRadioButton();
-        jLabel9 = new javax.swing.JLabel();
+        Login_Label = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         label1.setText("label1");
@@ -82,14 +79,14 @@ public class Register extends javax.swing.JFrame {
         Text_Password.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(0, 0, 0), 1, true));
         jPanel1.add(Text_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(821, 430, 490, 50));
 
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Register_Button.setBorderPainted(false);
+        Register_Button.setContentAreaFilled(false);
+        Register_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Register_ButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 860, 350, 50));
+        jPanel1.add(Register_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(890, 860, 350, 50));
 
         Freelancer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         Freelancer.setText("Freelancer");
@@ -111,12 +108,12 @@ public class Register extends javax.swing.JFrame {
         FEMALE.setContentAreaFilled(false);
         jPanel1.add(FEMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 610, -1, -1));
 
-        jLabel9.addMouseListener(new java.awt.event.MouseAdapter() {
+        Login_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel9MouseClicked(evt);
+                Login_LabelMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 930, 80, 30));
+        jPanel1.add(Login_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(1120, 930, 80, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 36)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anti/nganggur/Register Page.png"))); // NOI18N
@@ -138,7 +135,9 @@ public class Register extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Untuk Melakukan Verifikasi Bahwa Semua Kolom Telah Diisi
+     */
     private boolean verify(){
         String Username = Text_Username.getText();
         String Password = String.valueOf(Text_Password.getPassword());
@@ -157,7 +156,10 @@ public class Register extends javax.swing.JFrame {
             
             }
     };
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    /**
+     * Action Button Register
+     */
+    private void Register_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Register_ButtonActionPerformed
         String Username = Text_Username.getText();
         String Password = String.valueOf(Text_Password.getPassword());
         String Status = Text_Status.getText();
@@ -232,12 +234,14 @@ public class Register extends javax.swing.JFrame {
          
         } 
         
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jLabel9MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_Register_ButtonActionPerformed
+    /**
+     * Action Label Menuju Halaman Login
+     */
+    private void Login_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Login_LabelMouseClicked
         new Login().setVisible(true);
         
-    }//GEN-LAST:event_jLabel9MouseClicked
+    }//GEN-LAST:event_Login_LabelMouseClicked
 
     private void Text_UsernameActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_UsernameActionPerformed
         // TODO add your handling code here:
@@ -282,15 +286,15 @@ public class Register extends javax.swing.JFrame {
     private javax.swing.JRadioButton Client;
     private javax.swing.JRadioButton FEMALE;
     private javax.swing.JRadioButton Freelancer;
+    private javax.swing.JLabel Login_Label;
     private javax.swing.JRadioButton MALE;
+    private javax.swing.JButton Register_Button;
     private javax.swing.JTextField Text_Lokasi;
     private javax.swing.JPasswordField Text_Password;
     private javax.swing.JTextField Text_Status;
     private javax.swing.JTextField Text_Username;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     private javax.swing.JRadioButton jRadioButton2;

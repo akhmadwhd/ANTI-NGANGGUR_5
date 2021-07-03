@@ -35,20 +35,20 @@ public class Dashboard_Client extends javax.swing.JFrame {
     private void initComponents() {
 
         jButton1 = new javax.swing.JButton();
-        Done_BTN = new javax.swing.JButton();
+        Done_Button = new javax.swing.JButton();
         Job_BTN = new javax.swing.JButton();
         MyJob_BTN = new javax.swing.JButton();
         Balance_BTN = new javax.swing.JButton();
         Setting_BTN = new javax.swing.JButton();
-        jTextField2 = new javax.swing.JTextField();
-        jTextField3 = new javax.swing.JTextField();
-        jTextField4 = new javax.swing.JTextField();
-        jTextField5 = new javax.swing.JTextField();
+        Text_NamaPekerjaan = new javax.swing.JTextField();
+        Text_Deksripksi = new javax.swing.JTextField();
+        Text_Fee = new javax.swing.JTextField();
+        Text_JenisPekerjaan = new javax.swing.JTextField();
         jLabel3 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
+        Text_Id = new javax.swing.JTextField();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
@@ -65,14 +65,14 @@ public class Dashboard_Client extends javax.swing.JFrame {
         });
         getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(840, 30, 130, 40));
 
-        Done_BTN.setBorder(null);
-        Done_BTN.setContentAreaFilled(false);
-        Done_BTN.addActionListener(new java.awt.event.ActionListener() {
+        Done_Button.setBorder(null);
+        Done_Button.setContentAreaFilled(false);
+        Done_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Done_BTNActionPerformed(evt);
+                Done_ButtonActionPerformed(evt);
             }
         });
-        getContentPane().add(Done_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 790, 150, 40));
+        getContentPane().add(Done_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 770, 150, 40));
 
         Job_BTN.setContentAreaFilled(false);
         getContentPane().add(Job_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(270, 40, 70, 30));
@@ -102,21 +102,21 @@ public class Dashboard_Client extends javax.swing.JFrame {
         });
         getContentPane().add(Setting_BTN, new org.netbeans.lib.awtextra.AbsoluteConstraints(590, 40, 90, 30));
 
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        Text_NamaPekerjaan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                Text_NamaPekerjaanActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 540, 40));
+        getContentPane().add(Text_NamaPekerjaan, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 310, 540, 40));
 
-        jTextField3.addActionListener(new java.awt.event.ActionListener() {
+        Text_Deksripksi.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField3ActionPerformed(evt);
+                Text_DeksripksiActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 540, 170));
-        getContentPane().add(jTextField4, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 650, 540, 40));
-        getContentPane().add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 540, 40));
+        getContentPane().add(Text_Deksripksi, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 450, 540, 170));
+        getContentPane().add(Text_Fee, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 650, 540, 40));
+        getContentPane().add(Text_JenisPekerjaan, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 380, 540, 40));
 
         jLabel3.setText("Id");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 700, -1, -1));
@@ -130,12 +130,12 @@ public class Dashboard_Client extends javax.swing.JFrame {
         jLabel6.setText("Deskripsi Pekerjaan");
         getContentPane().add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 430, -1, -1));
 
-        jTextField1.addActionListener(new java.awt.event.ActionListener() {
+        Text_Id.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField1ActionPerformed(evt);
+                Text_IdActionPerformed(evt);
             }
         });
-        getContentPane().add(jTextField1, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, 540, 40));
+        getContentPane().add(Text_Id, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 720, 540, 40));
 
         jLabel7.setText("Tawaran Fee");
         getContentPane().add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(220, 630, -1, -1));
@@ -149,11 +149,11 @@ public class Dashboard_Client extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
     private boolean verify(){
-        String judul = jTextField2.getText();
-        String jenis = jTextField5.getText();
-        String deksripsi = jTextField3.getText();
-        String tawaran = jTextField4.getText();
-        String kode = jTextField1.getText();
+        String judul = Text_NamaPekerjaan.getText();
+        String jenis = Text_JenisPekerjaan.getText();
+        String deksripsi = Text_Deksripksi.getText();
+        String tawaran = Text_Fee.getText();
+        String kode = Text_Id.getText();
         
         if (judul.trim().equals("") || jenis.trim().equals("") || 
             deksripsi.trim().equals("") || tawaran.trim().equals("") || 
@@ -171,15 +171,15 @@ public class Dashboard_Client extends javax.swing.JFrame {
      dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void Done_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Done_BTNActionPerformed
+    private void Done_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Done_ButtonActionPerformed
         String temp =  "whd" ;
         String temp2 = "";
         String sts ="Belum";
-        String judul = jTextField2.getText();
-        String jenis = jTextField5.getText();
-        String deksripsi = jTextField3.getText();
-        String tawaran = jTextField4.getText();
-        String kode = jTextField1.getText();
+        String judul = Text_NamaPekerjaan.getText();
+        String jenis = Text_JenisPekerjaan.getText();
+        String deksripsi = Text_Deksripksi.getText();
+        String tawaran = Text_Fee.getText();
+        String kode = Text_Id.getText();
         String client = temp;
         String freelancer = temp2;
         String Status = sts;
@@ -220,15 +220,15 @@ public class Dashboard_Client extends javax.swing.JFrame {
                       
                   }
         }
-    }//GEN-LAST:event_Done_BTNActionPerformed
+    }//GEN-LAST:event_Done_ButtonActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void Text_NamaPekerjaanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_NamaPekerjaanActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_Text_NamaPekerjaanActionPerformed
 
-    private void jTextField3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField3ActionPerformed
+    private void Text_DeksripksiActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_DeksripksiActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField3ActionPerformed
+    }//GEN-LAST:event_Text_DeksripksiActionPerformed
 
     private void MyJob_BTNActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MyJob_BTNActionPerformed
     new MyJob_Client().setVisible(true);
@@ -245,9 +245,9 @@ public class Dashboard_Client extends javax.swing.JFrame {
     dispose();
     }//GEN-LAST:event_Setting_BTNMouseClicked
 
-    private void jTextField1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField1ActionPerformed
+    private void Text_IdActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Text_IdActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField1ActionPerformed
+    }//GEN-LAST:event_Text_IdActionPerformed
 
     /**
      * @param args the command line arguments
@@ -286,10 +286,15 @@ public class Dashboard_Client extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton Balance_BTN;
-    private javax.swing.JButton Done_BTN;
+    private javax.swing.JButton Done_Button;
     private javax.swing.JButton Job_BTN;
     private javax.swing.JButton MyJob_BTN;
     private javax.swing.JButton Setting_BTN;
+    private javax.swing.JTextField Text_Deksripksi;
+    private javax.swing.JTextField Text_Fee;
+    private javax.swing.JTextField Text_Id;
+    private javax.swing.JTextField Text_JenisPekerjaan;
+    private javax.swing.JTextField Text_NamaPekerjaan;
     private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel3;
@@ -298,10 +303,5 @@ public class Dashboard_Client extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
-    private javax.swing.JTextField jTextField1;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField3;
-    private javax.swing.JTextField jTextField4;
-    private javax.swing.JTextField jTextField5;
     // End of variables declaration//GEN-END:variables
 }

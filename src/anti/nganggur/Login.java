@@ -36,12 +36,12 @@ public class Login extends javax.swing.JFrame {
 
         jRadioButton1 = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
-        jButton1 = new javax.swing.JButton();
+        Login_Button = new javax.swing.JButton();
         Text_Username = new javax.swing.JTextField();
         Text_Password = new javax.swing.JPasswordField();
-        MALE = new javax.swing.JRadioButton();
-        FEMALE = new javax.swing.JRadioButton();
-        jLabel5 = new javax.swing.JLabel();
+        Freelancer = new javax.swing.JRadioButton();
+        Client = new javax.swing.JRadioButton();
+        Register_Label = new javax.swing.JLabel();
         jLabel1 = new javax.swing.JLabel();
 
         jRadioButton1.setText("jRadioButton1");
@@ -52,14 +52,14 @@ public class Login extends javax.swing.JFrame {
         jPanel1.setForeground(new java.awt.Color(204, 204, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jButton1.setBorderPainted(false);
-        jButton1.setContentAreaFilled(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
+        Login_Button.setBorderPainted(false);
+        Login_Button.setContentAreaFilled(false);
+        Login_Button.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+                Login_ButtonActionPerformed(evt);
             }
         });
-        jPanel1.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 730, 330, 50));
+        jPanel1.add(Login_Button, new org.netbeans.lib.awtextra.AbsoluteConstraints(900, 730, 330, 50));
 
         Text_Username.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(Text_Username, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 400, 490, 50));
@@ -67,28 +67,28 @@ public class Login extends javax.swing.JFrame {
         Text_Password.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
         jPanel1.add(Text_Password, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 500, 490, 50));
 
-        MALE.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        MALE.setText("FREELANCER");
-        MALE.setContentAreaFilled(false);
-        MALE.addActionListener(new java.awt.event.ActionListener() {
+        Freelancer.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Freelancer.setText("FREELANCER");
+        Freelancer.setContentAreaFilled(false);
+        Freelancer.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MALEActionPerformed(evt);
+                FreelancerActionPerformed(evt);
             }
         });
-        jPanel1.add(MALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 610, -1, -1));
+        jPanel1.add(Freelancer, new org.netbeans.lib.awtextra.AbsoluteConstraints(930, 610, -1, -1));
 
-        FEMALE.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
-        FEMALE.setText("CLIENT");
-        FEMALE.setContentAreaFilled(false);
-        jPanel1.add(FEMALE, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 610, -1, -1));
+        Client.setFont(new java.awt.Font("Tahoma", 0, 18)); // NOI18N
+        Client.setText("CLIENT");
+        Client.setContentAreaFilled(false);
+        jPanel1.add(Client, new org.netbeans.lib.awtextra.AbsoluteConstraints(1070, 610, -1, -1));
 
-        jLabel5.setText(".");
-        jLabel5.addMouseListener(new java.awt.event.MouseAdapter() {
+        Register_Label.setText(".");
+        Register_Label.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                jLabel5MouseClicked(evt);
+                Register_LabelMouseClicked(evt);
             }
         });
-        jPanel1.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 810, 120, 30));
+        jPanel1.add(Register_Label, new org.netbeans.lib.awtextra.AbsoluteConstraints(1100, 810, 120, 30));
 
         jLabel1.setFont(new java.awt.Font("Tahoma", 0, 48)); // NOI18N
         jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/anti/nganggur/Login Page.png"))); // NOI18N
@@ -108,8 +108,10 @@ public class Login extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+    /**
+     * Action Button Login
+     */
+    private void Login_ButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Login_ButtonActionPerformed
         
         PreparedStatement st;
         ResultSet rs;
@@ -117,7 +119,7 @@ public class Login extends javax.swing.JFrame {
         // get the username & password
         String username = Text_Username.getText();
         String password = String.valueOf(Text_Password.getPassword());
-        if (FEMALE.isSelected()){
+        if (Client.isSelected()){
         String query = "SELECT * FROM `client` WHERE `Username_Client` = ? AND `Password_Client` = ?";
         
         try {
@@ -130,7 +132,7 @@ public class Login extends javax.swing.JFrame {
             if(rs.next())
             {
                            new Dashboard_Client().setVisible(true);
-                             dispose();
+                           dispose();
 
             }else{
                 // error message
@@ -139,7 +141,7 @@ public class Login extends javax.swing.JFrame {
         } catch (SQLException ex) {
             Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
         }
-        } else if (MALE.isSelected()){
+        } else if (Freelancer.isSelected()){
             String query = "SELECT * FROM `freelance` WHERE `Nama_Freelance` = ? AND `Password_Freelancer` = ?";
         
             try {
@@ -167,16 +169,18 @@ public class Login extends javax.swing.JFrame {
         }
         
             
-    }//GEN-LAST:event_jButton1ActionPerformed
-
-    private void jLabel5MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_Login_ButtonActionPerformed
+    /**
+     * Action Label Register
+     */
+    private void Register_LabelMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Register_LabelMouseClicked
          new Register().setVisible(true);
          dispose();
-    }//GEN-LAST:event_jLabel5MouseClicked
+    }//GEN-LAST:event_Register_LabelMouseClicked
 
-    private void MALEActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MALEActionPerformed
+    private void FreelancerActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FreelancerActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_MALEActionPerformed
+    }//GEN-LAST:event_FreelancerActionPerformed
 
     /**
      * @param args the command line arguments
@@ -214,13 +218,13 @@ public class Login extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton FEMALE;
-    private javax.swing.JRadioButton MALE;
+    private javax.swing.JRadioButton Client;
+    private javax.swing.JRadioButton Freelancer;
+    private javax.swing.JButton Login_Button;
+    private javax.swing.JLabel Register_Label;
     private javax.swing.JPasswordField Text_Password;
     private javax.swing.JTextField Text_Username;
-    private javax.swing.JButton jButton1;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JRadioButton jRadioButton1;
     // End of variables declaration//GEN-END:variables
